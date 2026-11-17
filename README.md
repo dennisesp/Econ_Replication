@@ -244,7 +244,6 @@ My analysis has several limitations that are important for interpreting the find
 
 - **Penn State:** I excluded all Penn State campuses because I did not have the disaggregated 2019 data Howard used. This changes the Pennsylvania sample and limits how closely I can reproduce his estimates.
 - **Student migration:** I did not recreate Howard's in-state enrollment models because I did not have the migration data needed for those specifications.
-- **Tuition:** I use the natural logarithm of published in-state tuition and fees in my adjusted models. I have not confirmed whether this is the exact tuition measure Howard used.
 - **Causal interpretation:** My analysis depends on the parallel trends assumption and the absence of other shocks that affected the two states differently. The pretreatment tests provide some support, but they cannot establish those assumptions.
 - **Scope:** I focused on the main public-institution findings. I did not recreate every outcome, institutional sector, or additional analysis in the dissertation.
 
@@ -252,4 +251,4 @@ My analysis has several limitations that are important for interpreting the find
 
 Howard, J. E. (2026). *Excelsior scholarship and college enrollment in New York: Evidence of unexpected gains* [Doctoral dissertation, University of Pennsylvania].
 
-I use Howard's dissertation as the basis for the research design and as the benchmark for comparing the results. I completed the data cleaning and Python replication independently.
+
