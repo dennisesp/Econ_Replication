@@ -57,7 +57,7 @@ My cleaning process is in full detail in the Data cleaning Python notebook tittl
 
 ### Why I Excluded Penn State
 
-Beginning in 2019, Penn State changed how it reported campus enrollment data in IPEDS. Howard obtained supplemental campus-level data directly from Penn State, but I did not have access to those records. So I chose to remove all Penn State campuses so I could keep a consistent set of institutions across years without filling in missing values.
+Beginning in 2019, Penn State changed how it reported campus enrollment data in IPEDS, reporting all data from separate campuses under separate campus names before 2018, and then began merging them into one "Penn State" name in 2019. Howard obtained supplemental campus-level data directly from Penn State to keep 2019 analysis consistent with the other years, but I did not have access to those records. So I chose to remove all Penn State campuses so I could keep a consistent set of institutions across years without filling in missing values.
 
 This is the exclusion I use for my final sample:
 
