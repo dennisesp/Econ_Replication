@@ -6,7 +6,7 @@
 
 New York introduced the Excelsior Scholarship in 2017 to help eligible residents cover tuition at public colleges and universities. In his dissertation, Howard (2026) examines whether enrollment changed following the program's introduction, using Pennsylvania as a comparison state.
 
-For this project, I recreate Howard's main findings for public institutions using Integrated Postsecondary Education Data System (IPEDS) and Bureau of Labor Statistics (BLS) data from 2012 through 2019. I focus on first-time, full-time undergraduate enrollment and enrollment among Pell Grant recipients.
+For this project, I recreate Howard's main findings for public institutions using Integrated Postsecondary Education Data System (IPEDS) and Bureau of Labor Statistics (BLS) data from 2012 through 2019. Just like the original study did, I analyzed data  on first-time, full-time undergraduate enrollment and enrollment among Pell Grant recipients across Pennsylvania and New York public institutions. 
 
 I had two data limitations compared to Howard's original study. I could not obtain Penn State's disaggregated campus-level data for 2019, and I did not have the student migration data needed to recreate his in-state enrollment analysis. I therefore made some changes to the sample and focused on the main difference-in-differences (DiD) and event-study findings.
 
