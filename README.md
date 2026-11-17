@@ -45,7 +45,7 @@ These are the main variables I use in the analysis notebook.
 
 ## Data Cleaning
 
-My cleaning process is in full detail in the Data cleaning Python notebook tittled "Data_cleaning.ipynb"). Where I started with separate annual IPEDS files and BLS data and worked toward one institution-year panel.
+My cleaning process is in full detail in the Data cleaning Python notebook tittled "Data_cleaning.ipynb"). Where I started with separate annual IPEDS files and BLS data and merged them into one institution-year panel.
 
 1. **Merging IPEDS files.** I merged the annual Pell Grant, race and gender enrollment, and tuition files using `unitid`. I also standardized the column names across years.
 2. **Creating the panel.** I combined the annual datasets into one file and added `fall_year`.
