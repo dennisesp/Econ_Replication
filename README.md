@@ -84,21 +84,29 @@ For the statistical test, I interact the New York indicator with a linear time t
 
 None of my pretreatment slope tests were statistically significant at the 5% level. I therefore fail to reject the null hypothesis that the pretreatment slopes are equal, which provides some support for the parallel trends assumption. 
 
-#### Enrollment Trends in My Sample
+#### Enrollment Trends: Figure Comparisons
 
-I plotted average enrollment for both outcomes before running the DiD models. These figures use my final sample of 74 New York and 37 Pennsylvania public institutions.
+I plotted average enrollment for both outcomes before running the DiD models. These figures use my final sample of 74 New York and 37 Pennsylvania public institutions. I compare the patterns with the corresponding figures from Howard's dissertation.
+
+**First-time, full-time enrollment**
 
 <table>
+<tr><th width="50%">My enrollment trends</th><th width="50%">Howard's enrollment trends</th></tr>
 <tr>
-<th width="50%">First-Time, Full-Time Enrollment</th>
-<th width="50%">Pell Grant Enrollment</th>
-</tr>
-<tr>
-<td valign="top"><a href="Figures/ftft_enrollment_trends.png"><img src="Figures/ftft_enrollment_trends.png" alt="My average FTFT enrollment trends in New York and Pennsylvania, 2012–2019" width="100%"></a></td>
-<td valign="top"><a href="Figures/pell_enrollment_trends.png"><img src="Figures/pell_enrollment_trends.png" alt="My average Pell enrollment trends in New York and Pennsylvania, 2012–2019" width="100%"></a></td>
+<td valign="top"><a href="Figures/ftft_enrollment_trends.png"><img src="Figures/ftft_enrollment_trends.png" alt="My FTFT enrollment trends" width="100%"></a></td>
+<td valign="top"><a href="Figures/howard_ftft_enrollment_trends.png"><img src="Figures/howard_ftft_enrollment_trends.png" alt="Howard's FTFT enrollment trends" width="100%"></a></td>
 </tr>
 </table>
 
+**Pell Grant enrollment**
+
+<table>
+<tr><th width="50%">My Pell enrollment trends</th><th width="50%">Howard's Pell enrollment trends</th></tr>
+<tr>
+<td valign="top"><a href="Figures/pell_enrollment_trends.png"><img src="Figures/pell_enrollment_trends.png" alt="My Pell enrollment trends" width="100%"></a></td>
+<td valign="top"><a href="Figures/howard_pell_enrollment_trends.png"><img src="Figures/howard_pell_enrollment_trends.png" alt="Howard's Pell enrollment trends" width="100%"></a></td>
+</tr>
+</table>
 
 ### 2. Difference-in-Differences
 
@@ -143,30 +151,65 @@ After adding tuition and lagged county unemployment, my estimated treatment coef
 
 Overall, I find a similar pattern to Howard's DiD results. The estimates suggest increases in enrollment, but the adjusted models have substantial uncertainty.
 
-#### My DiD Results Compared with Howard's Tables 10 and 11
+#### DiD Tables: My Findings and Howard's Tables 10 and 11
+
+**Treatment begins in 2017**
 
 <table>
-<tr><th width="48%">My findings: 2017 DiD</th><th width="52%">Howard's original findings</th></tr>
+<tr><th width="50%">My 2017 DiD results</th><th width="50%">Howard's Table 10</th></tr>
 <tr>
 <td valign="top">
-<a href="Figures/did_2017.png"><img src="Figures/did_2017.png" alt="My 2017 DiD coefficients with 95 percent confidence intervals" width="100%"></a>
+<table>
+<tr><th>Outcome</th><th>Without covariates</th><th>With covariates</th></tr>
+<tr><td>FTFT enrollment</td><td align="right">82.99</td><td align="right">38.26</td></tr>
+<tr><td>Pell FTFT enrollment</td><td align="right">50.64</td><td align="right">27.14</td></tr>
+</table>
 <p>I find positive estimates for both outcomes, but neither adjusted estimate is significant at the 5% level.</p>
 </td>
-<td valign="top"><a href="Figures/howard_table10.png"><img src="Figures/howard_table10.png" alt="Howard's 2017 DiD results" width="100%"></a><p><em>Click the image to view the full original table.</em></p></td>
+<td valign="top"><a href="Figures/howard_table10.png"><img src="Figures/howard_table10.png" alt="Howard's 2017 DiD results in Table 10" width="100%"></a></td>
 </tr>
 </table>
+
+**Treatment begins in 2018**
 
 <table>
-<tr><th width="48%">My findings: 2018 DiD</th><th width="52%">Howard's original findings</th></tr>
+<tr><th width="50%">My 2018 DiD results</th><th width="50%">Howard's Table 11</th></tr>
 <tr>
 <td valign="top">
-<a href="Figures/did_2018.png"><img src="Figures/did_2018.png" alt="My 2018 DiD coefficients with 95 percent confidence intervals" width="100%"></a>
+<table>
+<tr><th>Outcome</th><th>Without covariates</th><th>With covariates</th></tr>
+<tr><td>FTFT enrollment</td><td align="right">85.78</td><td align="right">58.33</td></tr>
+<tr><td>Pell FTFT enrollment</td><td align="right">46.11</td><td align="right">30.30</td></tr>
+</table>
 <p>The estimates remain positive when I move treatment to 2018, but neither adjusted coefficient is significant at the 5% level.</p>
 </td>
-<td valign="top"><a href="Figures/howard_table11.png"><img src="Figures/howard_table11.png" alt="Howard's 2018 DiD results" width="100%"></a><p><em>Click the image to view the full original table.</em></p></td>
+<td valign="top"><a href="Figures/howard_table11.png"><img src="Figures/howard_table11.png" alt="Howard's 2018 DiD results in Table 11" width="100%"></a></td>
 </tr>
 </table>
 
+#### DiD Figures: My Estimates and Howard's Estimates
+
+For each treatment date, I place my coefficient plot beside a plot of Howard's reported estimates from the corresponding table. The Howard plots can be recreated from Tables 10 and 11.
+
+**2017 DiD coefficients**
+
+<table>
+<tr><th width="50%">My 2017 DiD figure</th><th width="50%">Howard's 2017 estimates (plotted from Table 10)</th></tr>
+<tr>
+<td valign="top"><a href="Figures/did_2017.png"><img src="Figures/did_2017.png" alt="My 2017 DiD coefficient plot" width="100%"></a></td>
+<td valign="top"><a href="Figures/howard_did_2017.png"><img src="Figures/howard_did_2017.png" alt="Plot of Howard's 2017 DiD estimates" width="100%"></a></td>
+</tr>
+</table>
+
+**2018 DiD coefficients**
+
+<table>
+<tr><th width="50%">My 2018 DiD figure</th><th width="50%">Howard's 2018 estimates (plotted from Table 11)</th></tr>
+<tr>
+<td valign="top"><a href="Figures/did_2018.png"><img src="Figures/did_2018.png" alt="My 2018 DiD coefficient plot" width="100%"></a></td>
+<td valign="top"><a href="Figures/howard_did_2018.png"><img src="Figures/howard_did_2018.png" alt="Plot of Howard's 2018 DiD estimates" width="100%"></a></td>
+</tr>
+</table>
 
 ### Event-Study Results
 
@@ -186,34 +229,69 @@ None of the individual pretreatment event-study coefficients were statistically 
 
 My results are generally consistent with Howard's main event-study findings. The differences in coefficient magnitudes may be related to my exclusion of Penn State and other differences in how the data were constructed.
 
-#### My Event-Study Results Compared with Howard's Tables 12 and 13
+#### Event-Study Tables: My Findings and Howard's Tables 12 and 13
+
+**First-time, full-time enrollment**
 
 <table>
-<tr><th width="48%">My findings: FTFT event study</th><th width="52%">Howard's original findings</th></tr>
+<tr><th width="50%">My FTFT event-study results</th><th width="50%">Howard's Table 12</th></tr>
 <tr>
 <td valign="top">
-<a href="Figures/event_study_ftft.png"><img src="Figures/event_study_ftft.png" alt="My FTFT event study with 95 percent confidence intervals" width="100%"></a>
-<p>My post-treatment estimates are positive and significant at the 5% level in all three years, similar to Howard’s findings.</p>
+<table>
+<tr><th>Year</th><th>Estimate</th><th>p-value</th></tr>
+<tr><td>2017</td><td align="right">63.65</td><td align="right">0.004</td></tr>
+<tr><td>2018</td><td align="right">100.01</td><td align="right">0.002</td></tr>
+<tr><td>2019</td><td align="right">102.05</td><td align="right">0.017</td></tr>
+</table>
+<p>My post-treatment estimates are positive and significant at the 5% level in all three years, similar to Howard's findings.</p>
 </td>
-<td valign="top"><a href="Figures/howard_table12.png"><img src="Figures/howard_table12.png" alt="Howard's FTFT event study results" width="100%"></a><p><em>Click the image to view the full original table.</em></p></td>
+<td valign="top"><a href="Figures/howard_table12.png"><img src="Figures/howard_table12.png" alt="Howard's FTFT event study table" width="100%"></a></td>
 </tr>
 </table>
 
+**Pell Grant enrollment**
+
 <table>
-<tr><th width="48%">My findings: Pell FTFT event study</th><th width="52%">Howard's original findings</th></tr>
+<tr><th width="50%">My Pell FTFT event-study results</th><th width="50%">Howard's Table 13</th></tr>
 <tr>
 <td valign="top">
-<a href="Figures/event_study_pell.png"><img src="Figures/event_study_pell.png" alt="My Pell event study with 95 percent confidence intervals" width="100%"></a>
+<table>
+<tr><th>Year</th><th>Estimate</th><th>p-value</th></tr>
+<tr><td>2017</td><td align="right">43.97</td><td align="right">0.001</td></tr>
+<tr><td>2018</td><td align="right">56.69</td><td align="right">0.005</td></tr>
+<tr><td>2019</td><td align="right">48.84</td><td align="right">0.058</td></tr>
+</table>
 <p>I find statistically significant increases in 2017 and 2018. The 2019 estimate is marginally significant at the 10% level.</p>
 </td>
-<td valign="top"><a href="Figures/howard_table13.png"><img src="Figures/howard_table13.png" alt="Howard's Pell FTFT event study results" width="100%"></a><p><em>Click the image to view the full original table.</em></p></td>
+<td valign="top"><a href="Figures/howard_table13.png"><img src="Figures/howard_table13.png" alt="Howard's Pell FTFT event study table" width="100%"></a></td>
+</tr>
+</table>
+
+#### Event-Study Figures: My Estimates and Howard's Figures
+
+**First-time, full-time enrollment**
+
+<table>
+<tr><th width="50%">My FTFT event-study figure</th><th width="50%">Howard's FTFT event-study figure</th></tr>
+<tr>
+<td valign="top"><a href="Figures/event_study_ftft.png"><img src="Figures/event_study_ftft.png" alt="My FTFT event study with 95 percent confidence intervals" width="100%"></a></td>
+<td valign="top"><a href="Figures/howard_event_study_ftft.png"><img src="Figures/howard_event_study_ftft.png" alt="Howard's FTFT event study figure" width="100%"></a></td>
+</tr>
+</table>
+
+**Pell Grant enrollment**
+
+<table>
+<tr><th width="50%">My Pell FTFT event-study figure</th><th width="50%">Howard's Pell FTFT event-study figure</th></tr>
+<tr>
+<td valign="top"><a href="Figures/event_study_pell.png"><img src="Figures/event_study_pell.png" alt="My Pell event study with 95 percent confidence intervals" width="100%"></a></td>
+<td valign="top"><a href="Figures/howard_event_study_pell.png"><img src="Figures/howard_event_study_pell.png" alt="Howard's Pell FTFT event study figure" width="100%"></a></td>
 </tr>
 </table>
 
 #### Reading the Figures
 
-The plots on the left show my coefficients and 95% confidence intervals. I placed Howard's original tables on the right so I can compare the estimates for each outcome. The different institutional samples are important when interpreting any differences between our findings.
-
+I compare my figures with Howard's figures for the same outcomes and treatment dates. I also keep the regression tables together above so I can compare the coefficients directly. Differences in our institutional samples are important when interpreting any differences in the estimates.
 
 ## Repository Structure
 
@@ -229,7 +307,7 @@ The notebooks use the following file paths. I keep the original data files organ
 │   ├── Race/
 │   └── Tuition and Fees/
 ├── BLS Data/
-├── Figures/                  # My six figures and Howard Tables 10–13
+├── Figures/                  # My figures, Howard tables, and comparison figure PNGs
 ├── Other Data/
 │   ├── county_fips_master.csv
 │   ├── 2019_county.csv
