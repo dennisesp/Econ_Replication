@@ -110,14 +110,15 @@ I plotted average enrollment for both outcomes before running the DiD models. Th
 
 ### 2. Difference-in-Differences
 
+
 Next, I estimate two-way fixed-effects DiD models:
 
 $$
-Y_{it} = \alpha + \gamma_i + \lambda_t
-+ \beta(\text{NY}_i \times \text{Post}_t) + \varepsilon_{it}
+Y_{it} = \alpha + \gamma_i + \lambda_t + \beta(\text{NY}_i \times \text{Post}_t) + \varepsilon_{it}
 $$
 
 Here, $Y_{it}$ is enrollment at institution $i$ in year $t$, while $\gamma_i$ and $\lambda_t$ represent institution and year fixed effects. The coefficient $\beta$ captures the estimated change in New York enrollment relative to Pennsylvania after treatment.
+
 
 I run separate models with treatment starting in **2017** and **2018**. I start without covariates, then add logged in-state tuition and county unemployment lagged one year. I cluster standard errors at the institution level.
 
