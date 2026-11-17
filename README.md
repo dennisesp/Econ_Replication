@@ -179,29 +179,7 @@ Overall, I find a similar pattern to Howard's DiD results. The estimates suggest
 </tr>
 </table>
 
-#### DiD Figures: My Estimates and Howard's Estimates
 
-For each treatment date, I place my coefficient plot beside a plot of Howard's reported estimates from the corresponding table. The Howard plots can be recreated from Tables 10 and 11.
-
-**2017 DiD coefficients**
-
-<table>
-<tr><th width="50%">My 2017 DiD figure</th><th width="50%">Howard's 2017 estimates (plotted from Table 10)</th></tr>
-<tr>
-<td valign="top"><a href="Figures/did_2017.png"><img src="Figures/did_2017.png" alt="My 2017 DiD coefficient plot" width="100%"></a></td>
-<td valign="top"><a href="Figures/howard_did_2017.png"><img src="Figures/howard_did_2017.png" alt="Plot of Howard's 2017 DiD estimates" width="100%"></a></td>
-</tr>
-</table>
-
-**2018 DiD coefficients**
-
-<table>
-<tr><th width="50%">My 2018 DiD figure</th><th width="50%">Howard's 2018 estimates (plotted from Table 11)</th></tr>
-<tr>
-<td valign="top"><a href="Figures/did_2018.png"><img src="Figures/did_2018.png" alt="My 2018 DiD coefficient plot" width="100%"></a></td>
-<td valign="top"><a href="Figures/howard_did_2018.png"><img src="Figures/howard_did_2018.png" alt="Plot of Howard's 2018 DiD estimates" width="100%"></a></td>
-</tr>
-</table>
 
 ### Event-Study Results
 
