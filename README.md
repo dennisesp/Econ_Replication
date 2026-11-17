@@ -84,6 +84,22 @@ For the statistical test, I interact the New York indicator with a linear time t
 
 None of my pretreatment slope tests were statistically significant at the 5% level. I therefore fail to reject the null hypothesis that the pretreatment slopes are equal, which provides some support for the parallel trends assumption. 
 
+#### Enrollment Trends in My Sample
+
+I plotted average enrollment for both outcomes before running the DiD models. These figures use my final sample of 74 New York and 37 Pennsylvania public institutions.
+
+<table>
+<tr>
+<th width="50%">First-Time, Full-Time Enrollment</th>
+<th width="50%">Pell Grant Enrollment</th>
+</tr>
+<tr>
+<td valign="top"><a href="Figures/ftft_enrollment_trends.png"><img src="Figures/ftft_enrollment_trends.png" alt="My average FTFT enrollment trends in New York and Pennsylvania, 2012–2019" width="100%"></a></td>
+<td valign="top"><a href="Figures/pell_enrollment_trends.png"><img src="Figures/pell_enrollment_trends.png" alt="My average Pell enrollment trends in New York and Pennsylvania, 2012–2019" width="100%"></a></td>
+</tr>
+</table>
+
+
 ### 2. Difference-in-Differences
 
 Next, I estimate two-way fixed-effects DiD models:
@@ -133,7 +149,7 @@ Overall, I find a similar pattern to Howard's DiD results. The estimates suggest
 <tr><th width="48%">My findings: 2017 DiD</th><th width="52%">Howard's original findings</th></tr>
 <tr>
 <td valign="top">
-<table><tr><th>Outcome</th><th>Estimate</th></tr><tr><td>FTFT, without covariates</td><td align="right">82.99</td></tr><tr><td>FTFT, with covariates</td><td align="right">38.26</td></tr><tr><td>Pell FTFT, without covariates</td><td align="right">50.64</td></tr><tr><td>Pell FTFT, with covariates</td><td align="right">27.14</td></tr></table>
+<a href="Figures/did_2017.png"><img src="Figures/did_2017.png" alt="My 2017 DiD coefficients with 95 percent confidence intervals" width="100%"></a>
 <p>I find positive estimates for both outcomes, but neither adjusted estimate is significant at the 5% level.</p>
 </td>
 <td valign="top"><a href="Figures/howard_table10.png"><img src="Figures/howard_table10.png" alt="Howard's 2017 DiD results" width="100%"></a><p><em>Click the image to view the full original table.</em></p></td>
@@ -144,7 +160,7 @@ Overall, I find a similar pattern to Howard's DiD results. The estimates suggest
 <tr><th width="48%">My findings: 2018 DiD</th><th width="52%">Howard's original findings</th></tr>
 <tr>
 <td valign="top">
-<table><tr><th>Outcome</th><th>Estimate</th></tr><tr><td>FTFT, without covariates</td><td align="right">85.78</td></tr><tr><td>FTFT, with covariates</td><td align="right">58.33</td></tr><tr><td>Pell FTFT, without covariates</td><td align="right">46.11</td></tr><tr><td>Pell FTFT, with covariates</td><td align="right">30.30</td></tr></table>
+<a href="Figures/did_2018.png"><img src="Figures/did_2018.png" alt="My 2018 DiD coefficients with 95 percent confidence intervals" width="100%"></a>
 <p>The estimates remain positive when I move treatment to 2018, but neither adjusted coefficient is significant at the 5% level.</p>
 </td>
 <td valign="top"><a href="Figures/howard_table11.png"><img src="Figures/howard_table11.png" alt="Howard's 2018 DiD results" width="100%"></a><p><em>Click the image to view the full original table.</em></p></td>
@@ -176,7 +192,7 @@ My results are generally consistent with Howard's main event-study findings. The
 <tr><th width="48%">My findings: FTFT event study</th><th width="52%">Howard's original findings</th></tr>
 <tr>
 <td valign="top">
-<table><tr><th>Outcome</th><th>Estimate</th></tr><tr><td>2017</td><td align="right">63.65 (p = 0.004)</td></tr><tr><td>2018</td><td align="right">100.01 (p = 0.002)</td></tr><tr><td>2019</td><td align="right">102.05 (p = 0.017)</td></tr></table>
+<a href="Figures/event_study_ftft.png"><img src="Figures/event_study_ftft.png" alt="My FTFT event study with 95 percent confidence intervals" width="100%"></a>
 <p>My post-treatment estimates are positive and significant at the 5% level in all three years, similar to Howard’s findings.</p>
 </td>
 <td valign="top"><a href="Figures/howard_table12.png"><img src="Figures/howard_table12.png" alt="Howard's FTFT event study results" width="100%"></a><p><em>Click the image to view the full original table.</em></p></td>
@@ -187,18 +203,16 @@ My results are generally consistent with Howard's main event-study findings. The
 <tr><th width="48%">My findings: Pell FTFT event study</th><th width="52%">Howard's original findings</th></tr>
 <tr>
 <td valign="top">
-<table><tr><th>Outcome</th><th>Estimate</th></tr><tr><td>2017</td><td align="right">43.97 (p = 0.001)</td></tr><tr><td>2018</td><td align="right">56.69 (p = 0.005)</td></tr><tr><td>2019</td><td align="right">48.84 (p = 0.058)</td></tr></table>
+<a href="Figures/event_study_pell.png"><img src="Figures/event_study_pell.png" alt="My Pell event study with 95 percent confidence intervals" width="100%"></a>
 <p>I find statistically significant increases in 2017 and 2018. The 2019 estimate is marginally significant at the 10% level.</p>
 </td>
 <td valign="top"><a href="Figures/howard_table13.png"><img src="Figures/howard_table13.png" alt="Howard's Pell FTFT event study results" width="100%"></a><p><em>Click the image to view the full original table.</em></p></td>
 </tr>
 </table>
 
-#### Visual Comparison of Event-Study Estimates
+#### Reading the Figures
 
-![Comparison of my event-study coefficients with Howard's published coefficients for 2017–2019](Figures/event_study_comparison.png)
-
-I plotted the post-treatment coefficients from my replication alongside Howard's estimates for both enrollment outcomes. This figure compares point estimates; the confidence intervals and p-values are reported in my analysis notebook and the tables above.
+The plots on the left show my coefficients and 95% confidence intervals. I placed Howard's original tables on the right so I can compare the estimates for each outcome. The different institutional samples are important when interpreting any differences between our findings.
 
 
 ## Repository Structure
@@ -215,7 +229,7 @@ The notebooks use the following file paths. I keep the original data files organ
 │   ├── Race/
 │   └── Tuition and Fees/
 ├── BLS Data/
-├── Figures/                  # Howard Tables 10–13 and comparison plot
+├── Figures/                  # My six figures and Howard Tables 10–13
 ├── Other Data/
 │   ├── county_fips_master.csv
 │   ├── 2019_county.csv
