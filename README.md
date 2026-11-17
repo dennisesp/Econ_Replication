@@ -24,7 +24,7 @@ I pulled the data and completed the cleaning process in my data cleaning noteboo
 | [BLS, Local Area Unemployment Statistics](https://www.bls.gov/lau/) | County unemployment rates | 2011–2018, lagged one year |
 | OpenDataPhilly user-contributed county FIPS file | County names and FIPS codes used to match IPEDS and BLS | County crosswalk |
 
-For the analysis, my unit of observation is an **institution-year**. Where New York public institutions and Pennsylvania public institutions as the treatment and control groups, respectively. are the treatment group, and  comparison group. The treatment is the introduction of the Excelsior scholarship in 2017.
+For the analysis, my unit of observation is an **institution-year**. Where New York public institutions and Pennsylvania public institutions as the treatment and control groups, respectively. The treatment is the introduction of the Excelsior scholarship in 2017.
 
 My final sample has **111 public institutions**, including **74 in New York and 37 in Pennsylvania**, observed over eight years (Different than Howard because he had 125 institutions total, and 51 in Pennsylvania).
 
