@@ -279,42 +279,7 @@ My results are generally consistent with Howard's main event-study findings. The
 
 I compare my figures with Howard's figures for the same outcomes and treatment dates. I also keep the regression tables together above so I can compare the coefficients directly. Differences in our institutional samples are important when interpreting any differences in the estimates.
 
-## Repository Structure
 
-The notebooks use the following file paths. I keep the original data files organized by source and save the final cleaned panel for the analysis.
-
-```text
-.
-├── README.md
-├── Data_cleaning.ipynb
-├── Excelsior_Replication_Step_by_Step.ipynb
-├── IPEDS Data/
-│   ├── Pell Grant/
-│   ├── Race/
-│   └── Tuition and Fees/
-├── BLS Data/
-├── Figures/                  # My figures, Howard tables, and comparison figure PNGs
-├── Other Data/
-│   ├── county_fips_master.csv
-│   ├── 2019_county.csv
-│   ├── 2012_control.csv
-│   └── 2019_control.csv
-└── panel_clean.csv
-```
-
-The IPEDS and BLS folders contain the annual source files used in the cleaning notebook. Some filenames are specific to my downloads, so the local paths need to match those in the code.
-
-## Reproducing My Analysis
-
-To run the notebooks, I use Python with pandas, NumPy, Matplotlib, statsmodels, and openpyxl. The following command installs the main packages:
-
-```bash
-python -m pip install pandas numpy matplotlib statsmodels openpyxl notebook
-```
-
-After placing the raw IPEDS, BLS, and county FIPS files in the corresponding folders, I run `Data_cleaning.ipynb` to generate `panel_clean.csv`. I then run `Excelsior_Replication_Step_by_Step.ipynb` to estimate the DiD and event-study models.
-
-Before comparing results, I check that my sample contains 74 New York and 37 Pennsylvania institutions in each year. I use Howard's Tables 10–13 as my benchmarks.
 
 ## Limitations
 
