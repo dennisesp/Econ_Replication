@@ -136,7 +136,7 @@ Overall, I find a similar pattern to Howard's DiD results. The estimates suggest
 <table><tr><th>Outcome</th><th>Estimate</th></tr><tr><td>FTFT, without covariates</td><td align="right">82.99</td></tr><tr><td>FTFT, with covariates</td><td align="right">38.26</td></tr><tr><td>Pell FTFT, without covariates</td><td align="right">50.64</td></tr><tr><td>Pell FTFT, with covariates</td><td align="right">27.14</td></tr></table>
 <p>I find positive estimates for both outcomes, but neither adjusted estimate is significant at the 5% level.</p>
 </td>
-<td valign="top"><a href="figures/howard_table10.png"><img src="figures/howard_table10.png" alt="Howard's 2017 DiD results" width="100%"></a><p><em>Click the image to view the full original table.</em></p></td>
+<td valign="top"><a href="Figures/howard_table10.png"><img src="Figures/howard_table10.png" alt="Howard's 2017 DiD results" width="100%"></a><p><em>Click the image to view the full original table.</em></p></td>
 </tr>
 </table>
 
@@ -147,7 +147,7 @@ Overall, I find a similar pattern to Howard's DiD results. The estimates suggest
 <table><tr><th>Outcome</th><th>Estimate</th></tr><tr><td>FTFT, without covariates</td><td align="right">85.78</td></tr><tr><td>FTFT, with covariates</td><td align="right">58.33</td></tr><tr><td>Pell FTFT, without covariates</td><td align="right">46.11</td></tr><tr><td>Pell FTFT, with covariates</td><td align="right">30.30</td></tr></table>
 <p>The estimates remain positive when I move treatment to 2018, but neither adjusted coefficient is significant at the 5% level.</p>
 </td>
-<td valign="top"><a href="figures/howard_table11.png"><img src="figures/howard_table11.png" alt="Howard's 2018 DiD results" width="100%"></a><p><em>Click the image to view the full original table.</em></p></td>
+<td valign="top"><a href="Figures/howard_table11.png"><img src="Figures/howard_table11.png" alt="Howard's 2018 DiD results" width="100%"></a><p><em>Click the image to view the full original table.</em></p></td>
 </tr>
 </table>
 
@@ -179,7 +179,7 @@ My results are generally consistent with Howard's main event-study findings. The
 <table><tr><th>Outcome</th><th>Estimate</th></tr><tr><td>2017</td><td align="right">63.65 (p = 0.004)</td></tr><tr><td>2018</td><td align="right">100.01 (p = 0.002)</td></tr><tr><td>2019</td><td align="right">102.05 (p = 0.017)</td></tr></table>
 <p>My post-treatment estimates are positive and significant at the 5% level in all three years, similar to Howard’s findings.</p>
 </td>
-<td valign="top"><a href="figures/howard_table12.png"><img src="figures/howard_table12.png" alt="Howard's FTFT event study results" width="100%"></a><p><em>Click the image to view the full original table.</em></p></td>
+<td valign="top"><a href="Figures/howard_table12.png"><img src="Figures/howard_table12.png" alt="Howard's FTFT event study results" width="100%"></a><p><em>Click the image to view the full original table.</em></p></td>
 </tr>
 </table>
 
@@ -190,13 +190,13 @@ My results are generally consistent with Howard's main event-study findings. The
 <table><tr><th>Outcome</th><th>Estimate</th></tr><tr><td>2017</td><td align="right">43.97 (p = 0.001)</td></tr><tr><td>2018</td><td align="right">56.69 (p = 0.005)</td></tr><tr><td>2019</td><td align="right">48.84 (p = 0.058)</td></tr></table>
 <p>I find statistically significant increases in 2017 and 2018. The 2019 estimate is marginally significant at the 10% level.</p>
 </td>
-<td valign="top"><a href="figures/howard_table13.png"><img src="figures/howard_table13.png" alt="Howard's Pell FTFT event study results" width="100%"></a><p><em>Click the image to view the full original table.</em></p></td>
+<td valign="top"><a href="Figures/howard_table13.png"><img src="Figures/howard_table13.png" alt="Howard's Pell FTFT event study results" width="100%"></a><p><em>Click the image to view the full original table.</em></p></td>
 </tr>
 </table>
 
 #### Visual Comparison of Event-Study Estimates
 
-![Comparison of my event-study coefficients with Howard's published coefficients for 2017–2019](figures/event_study_comparison.png)
+![Comparison of my event-study coefficients with Howard's published coefficients for 2017–2019](Figures/event_study_comparison.png)
 
 I plotted the post-treatment coefficients from my replication alongside Howard's estimates for both enrollment outcomes. This figure compares point estimates; the confidence intervals and p-values are reported in my analysis notebook and the tables above.
 
@@ -215,7 +215,7 @@ The notebooks use the following file paths. I keep the original data files organ
 │   ├── Race/
 │   └── Tuition and Fees/
 ├── BLS Data/
-├── figures/                  # Howard Tables 10–13 and comparison plot
+├── Figures/                  # Howard Tables 10–13 and comparison plot
 ├── Other Data/
 │   ├── county_fips_master.csv
 │   ├── 2019_county.csv
