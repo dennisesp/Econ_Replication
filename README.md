@@ -126,12 +126,9 @@ I run separate models with treatment starting in **2017** and **2018**. I start 
 
 Lastly, I estimate enrollment differences separately for each year, using **2016 as the reference year**:
 
-$$
-Y_{it} = \alpha + \gamma_i + \lambda_t
-+ \sum_{k \ne 2016} \delta_k
-(\text{NY}_i \times \mathbf{1}[t=k])
-+ \varepsilon_{it}
-$$
+```math
+Y_{it} = \alpha + \gamma_i + \lambda_t + \sum_{k \ne 2016} \delta_k (\text{NY}_i \times \mathbf{1}[t=k]) + \varepsilon_{it}
+```
 
 I use the estimates from 2012–2015 to examine pretreatment differences and the estimates from 2017–2019 to examine changes following Excelsior's introduction. I also plot the coefficients with 95% confidence intervals.
 
