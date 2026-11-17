@@ -215,12 +215,6 @@ For each treatment date, I place my coefficient plot beside a plot of Howard's r
 
 My event-study estimates show positive enrollment changes in New York following Excelsior's introduction.
 
-| Year | My FTFT estimate | Howard's FTFT estimate | My Pell FTFT estimate | Howard's Pell FTFT estimate |
-| --- | ---: | ---: | ---: | ---: |
-| 2017 | **63.65** (p = 0.004) | 68.35 | **43.97** (p = 0.001) | 51.38 |
-| 2018 | **100.01** (p = 0.002) | 83.29 | **56.69** (p = 0.005) | 51.95 |
-| 2019 | **102.05** (p = 0.017) | 79.21 | 48.84 (p = 0.058) | 44.90 |
-
 For first-time, full-time undergraduate enrollment, all three post-treatment coefficients were statistically significant at the 5% level. The estimates suggest increases of approximately 64, 100, and 102 students per New York public institution in 2017, 2018, and 2019, respectively, relative to Pennsylvania.
 
 I observed similar results for Pell Grant recipients. The estimated increases were approximately 44 students in 2017, 57 in 2018, and 49 in 2019. The 2017 and 2018 coefficients were significant at the 5% level, while the 2019 estimate was marginally significant at the 10% level.
