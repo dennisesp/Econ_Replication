@@ -74,7 +74,7 @@ The exclusion changes the Pennsylvania comparison group, so my results will not 
 
 ## Analysis
 
-My analysis can be found in [`Excelsior_Replication_Step_by_Step.ipynb`](Excelsior_Replication_Step_by_Step.ipynb). In this Python notebook, I  perform Howards' DiD and Event study, and compare my results to his tables 10-13. 
+My analysis can be found in [`Excelsior_Replication_Step_by_Step.ipynb`](Excelsior_Replication_Step_by_Step.ipynb). In this Python notebook, I  perform Howards' DiD and Event study as well as replicated some of his other figures, and compare my results to his tables 10-13. 
 
 ### 1. Checking Parallel Trends
 
