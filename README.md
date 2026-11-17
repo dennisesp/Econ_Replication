@@ -142,12 +142,6 @@ The event-study models reported below include institution and year fixed effects
 
 After adding tuition and lagged county unemployment, my estimated treatment coefficients decreased across all four models. The coefficients remained positive, although none were statistically significant at the 5% level.
 
-| Outcome | Treatment begins | Without covariates | With covariates | Adjusted p-value |
-| --- | ---: | ---: | ---: | ---: |
-| First-time, full-time enrollment | 2017 | 82.99 | 38.26 | 0.444 |
-| Pell Grant enrollment | 2017 | 50.64 | 27.14 | 0.319 |
-| First-time, full-time enrollment | 2018 | 85.78 | 58.33 | 0.196 |
-| Pell Grant enrollment | 2018 | 46.11 | 30.30 | 0.238 |
 
 Overall, I find a similar pattern to Howard's DiD results. The estimates suggest increases in enrollment, but the adjusted models have substantial uncertainty.
 
