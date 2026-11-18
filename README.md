@@ -98,15 +98,8 @@ I plotted average enrollment for both outcomes before running the DiD models. Th
 </tr>
 </table>
 
-**Pell Grant enrollment**
 
-<table>
-<tr><th width="50%">My Pell enrollment trends</th><th width="50%">Howard's Pell enrollment trends</th></tr>
-<tr>
-<td valign="top"><a href="Figures/pell_enrollment_trends.png"><img src="Figures/pell_enrollment_trends.png" alt="My Pell enrollment trends" width="100%"></a></td>
-<td valign="top"><a href="Figures/howard_pell_enrollment_trends.png"><img src="Figures/howard_pell_enrollment_trends.png" alt="Howard's Pell enrollment trends" width="100%"></a></td>
-</tr>
-</table>
+
 
 ### 2. Difference-in-Differences
 
