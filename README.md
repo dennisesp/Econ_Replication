@@ -4,11 +4,11 @@
 
 ## Project Overview
 
-New York introduced the Excelsior Scholarship in 2017 to help eligible residents cover tuition at public colleges and universities. In his dissertation, Howard (2026) examines whether enrollment changed following the program's introduction, using Pennsylvania as a comparison state.
+New York introduced the Excelsior Scholarship in 2017 to help eligible residents cover tuition at public colleges and universities. In his dissertation, Howard (2026) examines whether enrollment changed following the program's introduction, using Pennsylvania as a comparison state. Through his analysis Howard found that enrollment in New York went up for Pell grant eligible students following the excelsior scholarship program's introduction. 
 
-For this project, I recreate Howard's main findings for public institutions using data from 2012 through 2019. I focus on first-time, full-time undergraduate enrollment and enrollment among Pell Grant recipients.
+For this project, I recreate Howard's main findings for public institutions using the Integrated Postsecondary Education Data System (IPEDS) and Bureau of Labor Statistics (BLS) data from 2012 through 2019. Just like the original study did, I analyzed data  on first-time, full-time undergraduate enrollment and enrollment among Pell Grant recipients across Pennsylvania and New York public institutions. 
 
-I had two data limitations compared to Howard's original study. I could not obtain Penn State's disaggregated campus-level data for 2019, and I did not have the student migration data needed to recreate his in-state enrollment analysis. I therefore made some changes to the sample and focused on the main difference-in-differences (DiD) and event-study findings.
+My main data limitations compared to Howard's original study was that I could not obtain Penn State's disaggregated campus-level. This meant that the instiution count for the control state, Pennsylvania, was lower than the count in Howard's study. Still, I was able to replicate Howard's methods, and nearly match his outcomes. 
 
 ## Data
 
@@ -24,7 +24,7 @@ I pulled the data and completed the cleaning process in my data cleaning noteboo
 | [BLS, Local Area Unemployment Statistics](https://www.bls.gov/lau/) | County unemployment rates | 2011–2018, lagged one year |
 | OpenDataPhilly user-contributed county FIPS file | County names and FIPS codes used to match IPEDS and BLS | County crosswalk |
 
-For the analysis, my unit of observation is an **institution-year**. New York public institutions make up the treatment group, and Pennsylvania public institutions make up the comparison group. I use 2012–2019, with Excelsior introduced in 2017.
+For the analysis, my unit of observation is an **institution-year**. Where New York public institutions and Pennsylvania public institutions as the treatment and control groups, respectively. The treatment is the introduction of the Excelsior scholarship in 2017.
 
 My final sample has **111 public institutions**, including **74 in New York and 37 in Pennsylvania**, observed over eight years (Different than Howard because he had 125 institutions total, and 51 in Pennsylvania).
 
@@ -45,7 +45,7 @@ These are the main variables I use in the analysis notebook.
 
 ## Data Cleaning
 
-My cleaning process is in full detail in the Data cleaning Python notebook tittled "Data_cleaning.ipynb"). Where I started with separate annual IPEDS files and BLS data and merged them into one institution-year panel.
+My cleaning process is in full detail in the Data cleaning Python notebook tittled "Data_cleaning.ipynb. Where I started with separate annual IPEDS files and BLS data and merged them into one institution-year panel.
 
 1. **Merging IPEDS files.** I merged the annual Pell Grant, race and gender enrollment, and tuition files using `unitid`. I also standardized the column names across years.
 2. **Creating the panel.** I combined the annual datasets into one file and added `fall_year`.
@@ -57,7 +57,7 @@ My cleaning process is in full detail in the Data cleaning Python notebook tittl
 
 ### Why I Excluded Penn State
 
-Beginning in 2019, Penn State changed how it reported campus enrollment data in IPEDS. Howard obtained supplemental campus-level data directly from Penn State, but I did not have access to those records. So I chose to remove all Penn State campuses so I could keep a consistent set of institutions across years without filling in missing values.
+Beginning in 2019, Penn State changed how it reported campus enrollment data in IPEDS, reporting all data from separate campuses under separate campus names before 2018, and then began merging them into one "Penn State" name in 2019. Howard obtained supplemental campus-level data directly from Penn State to keep 2019 analysis consistent with the other years, but I did not have access to those records. So I chose to remove all Penn State campuses so I could keep a consistent set of institutions across years without filling in missing values.
 
 This is the exclusion I use for my final sample:
 
@@ -74,39 +74,65 @@ The exclusion changes the Pennsylvania comparison group, so my results will not 
 
 ## Analysis
 
-My analysis can be found in [`Excelsior_Replication_Step_by_Step.ipynb`](Excelsior_Replication_Step_by_Step.ipynb). In this Python notebook, I  perform Howards' DiD and Event study, and compare my results to his tables 10-13. 
+My analysis can be found in [`Excelsior_Replication_Step_by_Step.ipynb`](Excelsior_Replication_Step_by_Step.ipynb). In that Python notebook, I  perform Howards' DiD and Event study as well as replicated some of his other figures, and compare my results to his tables 10-13. 
 
 ### 1. Checking Parallel Trends
 
 I first plot average enrollment in New York and Pennsylvania between 2012 and 2019. I then test whether the two states had significantly different linear enrollment trends before treatment.
 
+<td valign="top">
+  <a href="Figures/Parallel_Trends_Stats.png">
+    <img
+      src="Figures/Parallel_Trends_Stats.png"
+      alt="My parallel trends statistical results"
+      width="100%"
+    >
+  </a>
+</td>
+
+
 For the statistical test, I interact the New York indicator with a linear time trend and include institution and year fixed effects. I run the test with treatment beginning in both 2017 and 2018.
 
 None of my pretreatment slope tests were statistically significant at the 5% level. I therefore fail to reject the null hypothesis that the pretreatment slopes are equal, which provides some support for the parallel trends assumption. 
+
+#### Enrollment Trends: Figure Comparisons
+
+I plotted average enrollment for both outcomes before running the DiD models. These figures use my final sample of 74 New York and 37 Pennsylvania public institutions. I compare the patterns with the corresponding figures from Howard's dissertation.
+
+**First-time, full-time enrollment**
+
+<table>
+<tr><th width="50%">My enrollment trends</th><th width="50%">Howard's enrollment trends</th></tr>
+<tr>
+<td valign="top"><a href="Figures/ftft_enrollment_trends.png"><img src="Figures/ftft_enrollment_trends.png" alt="My FTFT enrollment trends" width="100%"></a></td>
+<td valign="top"><a href="Figures/howard_ftft_enrollment_trends.png"><img src="Figures/howard_ftft_enrollment_trends.png" alt="Howard's FTFT enrollment trends" width="100%"></a></td>
+</tr>
+</table>
+
+
+
 
 ### 2. Difference-in-Differences
 
 Next, I estimate two-way fixed-effects DiD models:
 
 $$
-Y_{it} = \alpha + \gamma_i + \lambda_t
-+ \beta(\text{NY}_i \times \text{Post}_t) + \varepsilon_{it}
+Y_{it} = \alpha + \gamma_i + \lambda_t + \beta(\text{NY}_i \times \text{Post}_t) + \varepsilon_{it}
 $$
 
 Here, $Y_{it}$ is enrollment at institution $i$ in year $t$, while $\gamma_i$ and $\lambda_t$ represent institution and year fixed effects. The coefficient $\beta$ captures the estimated change in New York enrollment relative to Pennsylvania after treatment.
 
-I run separate models with treatment starting in **2017** and **2018**. I start without covariates, then add logged in-state tuition and county unemployment lagged one year. I cluster standard errors at the institution level.
+Following Howard's approach, I run separate models with treatment starting in **2017** and **2018**. He analyzed  both years because he wasn't sure if the 2017 cohort would've been impacted by the scholarship so soon after its announcement. 
+
+
 
 ### 3. Event Study
 
 Lastly, I estimate enrollment differences separately for each year, using **2016 as the reference year**:
 
-$$
-Y_{it} = \alpha + \gamma_i + \lambda_t
-+ \sum_{k \ne 2016} \delta_k
-(\text{NY}_i \times \mathbf{1}[t=k])
-+ \varepsilon_{it}
-$$
+```math
+Y_{it} = \alpha + \gamma_i + \lambda_t + \sum_{k \ne 2016} \delta_k (\text{NY}_i \times \mathbf{1}[t=k]) + \varepsilon_{it}
+```
 
 I use the estimates from 2012–2015 to examine pretreatment differences and the estimates from 2017–2019 to examine changes following Excelsior's introduction. I also plot the coefficients with 95% confidence intervals.
 
@@ -118,49 +144,50 @@ The event-study models reported below include institution and year fixed effects
 
 After adding tuition and lagged county unemployment, my estimated treatment coefficients decreased across all four models. The coefficients remained positive, although none were statistically significant at the 5% level.
 
-| Outcome | Treatment begins | Without covariates | With covariates | Adjusted p-value |
-| --- | ---: | ---: | ---: | ---: |
-| First-time, full-time enrollment | 2017 | 82.99 | 38.26 | 0.444 |
-| Pell Grant enrollment | 2017 | 50.64 | 27.14 | 0.319 |
-| First-time, full-time enrollment | 2018 | 85.78 | 58.33 | 0.196 |
-| Pell Grant enrollment | 2018 | 46.11 | 30.30 | 0.238 |
 
-Overall, I find a similar pattern to Howard's DiD results. The estimates suggest increases in enrollment, but the adjusted models have substantial uncertainty.
+Overall, I find a similar pattern to Howard's DiD results. Where the estimates suggest increases in enrollment, however the models still have substantial uncertainty demonstrated by.. [need to be more specific here].
 
-#### My DiD Results Compared with Howard's Tables 10 and 11
+#### DiD Tables: My Findings and Howard's Tables 10 and 11
+
+**Treatment begins in 2017**
 
 <table>
-<tr><th width="48%">My findings: 2017 DiD</th><th width="52%">Howard's original findings</th></tr>
+<tr><th width="50%">My 2017 DiD results</th><th width="50%">Howard's Table 10</th></tr>
 <tr>
 <td valign="top">
-<table><tr><th>Outcome</th><th>Estimate</th></tr><tr><td>FTFT, without covariates</td><td align="right">82.99</td></tr><tr><td>FTFT, with covariates</td><td align="right">38.26</td></tr><tr><td>Pell FTFT, without covariates</td><td align="right">50.64</td></tr><tr><td>Pell FTFT, with covariates</td><td align="right">27.14</td></tr></table>
+<table>
+<tr><th>Outcome</th><th>Without covariates</th><th>With covariates</th></tr>
+<tr><td>FTFT enrollment</td><td align="right">82.99</td><td align="right">38.26</td></tr>
+<tr><td>Pell FTFT enrollment</td><td align="right">50.64</td><td align="right">27.14</td></tr>
+</table>
 <p>I find positive estimates for both outcomes, but neither adjusted estimate is significant at the 5% level.</p>
 </td>
-<td valign="top"><a href="Figures/howard_table10.png"><img src="Figures/howard_table10.png" alt="Howard's 2017 DiD results" width="100%"></a><p><em>Click the image to view the full original table.</em></p></td>
+<td valign="top"><a href="Figures/howard_table10.png"><img src="Figures/howard_table10.png" alt="Howard's 2017 DiD results in Table 10" width="100%"></a></td>
 </tr>
 </table>
 
+**Treatment begins in 2018**
+
 <table>
-<tr><th width="48%">My findings: 2018 DiD</th><th width="52%">Howard's original findings</th></tr>
+<tr><th width="50%">My 2018 DiD results</th><th width="50%">Howard's Table 11</th></tr>
 <tr>
 <td valign="top">
-<table><tr><th>Outcome</th><th>Estimate</th></tr><tr><td>FTFT, without covariates</td><td align="right">85.78</td></tr><tr><td>FTFT, with covariates</td><td align="right">58.33</td></tr><tr><td>Pell FTFT, without covariates</td><td align="right">46.11</td></tr><tr><td>Pell FTFT, with covariates</td><td align="right">30.30</td></tr></table>
+<table>
+<tr><th>Outcome</th><th>Without covariates</th><th>With covariates</th></tr>
+<tr><td>FTFT enrollment</td><td align="right">85.78</td><td align="right">58.33</td></tr>
+<tr><td>Pell FTFT enrollment</td><td align="right">46.11</td><td align="right">30.30</td></tr>
+</table>
 <p>The estimates remain positive when I move treatment to 2018, but neither adjusted coefficient is significant at the 5% level.</p>
 </td>
-<td valign="top"><a href="Figures/howard_table11.png"><img src="Figures/howard_table11.png" alt="Howard's 2018 DiD results" width="100%"></a><p><em>Click the image to view the full original table.</em></p></td>
+<td valign="top"><a href="Figures/howard_table11.png"><img src="Figures/howard_table11.png" alt="Howard's 2018 DiD results in Table 11" width="100%"></a></td>
 </tr>
 </table>
+
 
 
 ### Event-Study Results
 
 My event-study estimates show positive enrollment changes in New York following Excelsior's introduction.
-
-| Year | My FTFT estimate | Howard's FTFT estimate | My Pell FTFT estimate | Howard's Pell FTFT estimate |
-| --- | ---: | ---: | ---: | ---: |
-| 2017 | **63.65** (p = 0.004) | 68.35 | **43.97** (p = 0.001) | 51.38 |
-| 2018 | **100.01** (p = 0.002) | 83.29 | **56.69** (p = 0.005) | 51.95 |
-| 2019 | **102.05** (p = 0.017) | 79.21 | 48.84 (p = 0.058) | 44.90 |
 
 For first-time, full-time undergraduate enrollment, all three post-treatment coefficients were statistically significant at the 5% level. The estimates suggest increases of approximately 64, 100, and 102 students per New York public institution in 2017, 2018, and 2019, respectively, relative to Pennsylvania.
 
@@ -170,73 +197,71 @@ None of the individual pretreatment event-study coefficients were statistically 
 
 My results are generally consistent with Howard's main event-study findings. The differences in coefficient magnitudes may be related to my exclusion of Penn State and other differences in how the data were constructed.
 
-#### My Event-Study Results Compared with Howard's Tables 12 and 13
+#### Event-Study Tables: My Findings and Howard's Tables 12 and 13
+
+**First-time, full-time enrollment**
 
 <table>
-<tr><th width="48%">My findings: FTFT event study</th><th width="52%">Howard's original findings</th></tr>
+<tr><th width="50%">My FTFT event-study results</th><th width="50%">Howard's Table 12</th></tr>
 <tr>
 <td valign="top">
-<table><tr><th>Outcome</th><th>Estimate</th></tr><tr><td>2017</td><td align="right">63.65 (p = 0.004)</td></tr><tr><td>2018</td><td align="right">100.01 (p = 0.002)</td></tr><tr><td>2019</td><td align="right">102.05 (p = 0.017)</td></tr></table>
-<p>My post-treatment estimates are positive and significant at the 5% level in all three years, similar to Howard’s findings.</p>
+<table>
+<tr><th>Year</th><th>Estimate</th><th>p-value</th></tr>
+<tr><td>2017</td><td align="right">63.65</td><td align="right">0.004</td></tr>
+<tr><td>2018</td><td align="right">100.01</td><td align="right">0.002</td></tr>
+<tr><td>2019</td><td align="right">102.05</td><td align="right">0.017</td></tr>
+</table>
+<p>My post-treatment estimates are positive and significant at the 5% level in all three years, similar to Howard's findings.</p>
 </td>
-<td valign="top"><a href="Figures/howard_table12.png"><img src="Figures/howard_table12.png" alt="Howard's FTFT event study results" width="100%"></a><p><em>Click the image to view the full original table.</em></p></td>
+<td valign="top"><a href="Figures/howard_table12.png"><img src="Figures/howard_table12.png" alt="Howard's FTFT event study table" width="100%"></a></td>
 </tr>
 </table>
 
+**Pell Grant enrollment**
+
 <table>
-<tr><th width="48%">My findings: Pell FTFT event study</th><th width="52%">Howard's original findings</th></tr>
+<tr><th width="50%">My Pell FTFT event-study results</th><th width="50%">Howard's Table 13</th></tr>
 <tr>
 <td valign="top">
-<table><tr><th>Outcome</th><th>Estimate</th></tr><tr><td>2017</td><td align="right">43.97 (p = 0.001)</td></tr><tr><td>2018</td><td align="right">56.69 (p = 0.005)</td></tr><tr><td>2019</td><td align="right">48.84 (p = 0.058)</td></tr></table>
+<table>
+<tr><th>Year</th><th>Estimate</th><th>p-value</th></tr>
+<tr><td>2017</td><td align="right">43.97</td><td align="right">0.001</td></tr>
+<tr><td>2018</td><td align="right">56.69</td><td align="right">0.005</td></tr>
+<tr><td>2019</td><td align="right">48.84</td><td align="right">0.058</td></tr>
+</table>
 <p>I find statistically significant increases in 2017 and 2018. The 2019 estimate is marginally significant at the 10% level.</p>
 </td>
-<td valign="top"><a href="Figures/howard_table13.png"><img src="Figures/howard_table13.png" alt="Howard's Pell FTFT event study results" width="100%"></a><p><em>Click the image to view the full original table.</em></p></td>
+<td valign="top"><a href="Figures/howard_table13.png"><img src="Figures/howard_table13.png" alt="Howard's Pell FTFT event study table" width="100%"></a></td>
 </tr>
 </table>
 
-#### Visual Comparison of Event-Study Estimates
+#### Event-Study Figures: My Estimates and Howard's Figures
 
-![Comparison of my event-study coefficients with Howard's published coefficients for 2017–2019](Figures/event_study_comparison.png)
+**First-time, full-time enrollment**
 
-I plotted the post-treatment coefficients from my replication alongside Howard's estimates for both enrollment outcomes. This figure compares point estimates; the confidence intervals and p-values are reported in my analysis notebook and the tables above.
+<table>
+<tr><th width="50%">My FTFT event-study figure</th><th width="50%">Howard's FTFT event-study figure</th></tr>
+<tr>
+<td valign="top"><a href="Figures/event_study_ftft.png"><img src="Figures/event_study_ftft.png" alt="My FTFT event study with 95 percent confidence intervals" width="100%"></a></td>
+<td valign="top"><a href="Figures/howard_event_study_ftft.png"><img src="Figures/howard_event_study_ftft.png" alt="Howard's FTFT event study figure" width="100%"></a></td>
+</tr>
+</table>
+
+**Pell Grant enrollment**
+
+<table>
+<tr><th width="50%">My Pell FTFT event-study figure</th><th width="50%">Howard's Pell FTFT event-study figure</th></tr>
+<tr>
+<td valign="top"><a href="Figures/event_study_pell.png"><img src="Figures/event_study_pell.png" alt="My Pell event study with 95 percent confidence intervals" width="100%"></a></td>
+<td valign="top"><a href="Figures/howard_event_study_pell.png"><img src="Figures/howard_event_study_pell.png" alt="Howard's Pell FTFT event study figure" width="100%"></a></td>
+</tr>
+</table>
+
+#### Reading the Figures
+
+I compare my figures with Howard's figures for the same outcomes and treatment dates. I also keep the regression tables together above so I can compare the coefficients directly. Differences in our institutional samples are important when interpreting any differences in the estimates.
 
 
-## Repository Structure
-
-The notebooks use the following file paths. I keep the original data files organized by source and save the final cleaned panel for the analysis.
-
-```text
-.
-├── README.md
-├── Data_cleaning.ipynb
-├── Excelsior_Replication_Step_by_Step.ipynb
-├── IPEDS Data/
-│   ├── Pell Grant/
-│   ├── Race/
-│   └── Tuition and Fees/
-├── BLS Data/
-├── Figures/                  # Howard Tables 10–13 and comparison plot
-├── Other Data/
-│   ├── county_fips_master.csv
-│   ├── 2019_county.csv
-│   ├── 2012_control.csv
-│   └── 2019_control.csv
-└── panel_clean.csv
-```
-
-The IPEDS and BLS folders contain the annual source files used in the cleaning notebook. Some filenames are specific to my downloads, so the local paths need to match those in the code.
-
-## Reproducing My Analysis
-
-To run the notebooks, I use Python with pandas, NumPy, Matplotlib, statsmodels, and openpyxl. The following command installs the main packages:
-
-```bash
-python -m pip install pandas numpy matplotlib statsmodels openpyxl notebook
-```
-
-After placing the raw IPEDS, BLS, and county FIPS files in the corresponding folders, I run `Data_cleaning.ipynb` to generate `panel_clean.csv`. I then run `Excelsior_Replication_Step_by_Step.ipynb` to estimate the DiD and event-study models.
-
-Before comparing results, I check that my sample contains 74 New York and 37 Pennsylvania institutions in each year. I use Howard's Tables 10–13 as my benchmarks.
 
 ## Limitations
 
