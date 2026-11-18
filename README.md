@@ -30,7 +30,7 @@ My final sample has **111 public institutions**, including **74 in New York and 
 
 ### Main Variables
 
-| Variable | How I use it |
+| Variable | Definition |
 | --- | --- |
 | `unitid` | Identify institutions, add institution fixed effects, and cluster standard errors |
 | `fall_year` | Identify the year and add year fixed effects |
