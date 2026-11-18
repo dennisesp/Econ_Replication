@@ -35,10 +35,9 @@ My final sample has **111 public institutions**, including **74 in New York and 
 | `unitid` | Identify institutions, add institution fixed effects, and cluster standard errors |
 | `fall_year` | Identify the year and add year fixed effects |
 | `state` | Distinguish New York from Pennsylvania |
-| `Grand total` | First-time, full-time undergraduate enrollment |
-| `Number of full-time first-time undergraduates awarded Pell grants` | First-time, full-time Pell Grant enrollment |
-| `public` | Keep public institutions |
-| `Published in-state tuition and fees` | Create the logged tuition variable for adjusted models |
+| `Grand total` | First-time, full-time undergraduate student enrollment count|
+| `Number of full-time first-time undergraduates awarded Pell grants` | First-time, full-time Pell Grant awarded students  count |
+| `Published in-state tuition and fees` | Represents the logged tuition variable for adjusted models |
 | `unemp_lag` | Control for county unemployment in the preceding year |
 
 These are the main variables I use in the analysis notebook.
