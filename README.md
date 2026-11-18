@@ -81,7 +81,7 @@ My analysis can be found in [`Excelsior_Replication_Step_by_Step.ipynb`](Excelsi
 
 ### 1. Checking Parallel Trends
 
-I first plot average enrollment in New York and Pennsylvania between 2012 and 2019. I then test whether the two states had significantly different linear enrollment trends before treatment.
+I first plotted average enrollment in New York and Pennsylvania between 2012 and 2019. 
 
 **First-Time, Full-Time Undergraduate Enrollment**
 
@@ -91,7 +91,10 @@ I first plot average enrollment in New York and Pennsylvania between 2012 and 20
 
 ![Pell Grant Enrollment Trends](Figures/pell_enrollment_trends.png)
 
-For the statistical test, I interact the New York indicator with a linear time trend and include institution and year fixed effects. I run the test with treatment beginning in both 2017 and 2018.
+
+
+
+I then tested whether the two states had significantly different linear enrollment trends before treatment. For the statistical test, I interact the New York indicator with a linear time trend and include institution and year fixed effects. I run the test with treatment beginning in both 2017 and 2018.
 
 <td valign="top">
   <a href="Figures/Parallel_Trends_Stats.png">
@@ -106,20 +109,6 @@ For the statistical test, I interact the New York indicator with a linear time t
 None of my pretreatment slope tests were statistically significant at the 5% level. I therefore fail to reject the null hypothesis that the pretreatment slopes are equal, which provides some support for the parallel trends assumption.
 
 
-#### Enrollment Trends: Figure Comparisons
-
-I plotted average enrollment for both outcomes before running the DiD models. These figures use my final sample of 74 New York and 37 Pennsylvania public institutions. I compare the patterns with the corresponding figures from Howard's dissertation.
-
-**First-time, full-time enrollment**
-
-<table>
-<tr><th width="50%">My enrollment trends</th><th width="50%">Howard's enrollment trends</th></tr>
-<tr>
-<td valign="top"><a href="Figures/ftft_enrollment_trends.png"><img src="Figures/ftft_enrollment_trends.png" alt="My FTFT enrollment trends" width="100%"></a></td>
-<td valign="top"><a href="Figures/howard_ftft_enrollment_trends.png"><img src="Figures/howard_ftft_enrollment_trends.png" alt="Howard's FTFT enrollment trends" width="100%"></a></td>
-</tr>
-</table>
-
 
 
 
@@ -133,7 +122,7 @@ $$
 
 Here, $Y_{it}$ is enrollment at institution $i$ in year $t$, while $\gamma_i$ and $\lambda_t$ represent institution and year fixed effects. The coefficient $\beta$ captures the estimated change in New York enrollment relative to Pennsylvania after treatment.
 
-Following Howard's approach, I run separate models with treatment starting in **2017** and **2018**. He analyzed  both years because he wasn't sure if the 2017 cohort would've been impacted by the scholarship so soon after its announcement. 
+Following Howard's approach, I run separate models with treatment starting in **2017** and **2018**. He analyzed both years because he wasn't sure if the 2017 cohort would've been impacted by the scholarship so soon after its announcement.
 
 
 
