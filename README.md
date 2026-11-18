@@ -128,7 +128,7 @@ Following Howard's approach, I run separate models with treatment starting in **
 
 ### 3. Event Study
 
-Lastly, I estimate enrollment differences separately for each year, using **2016 as the reference year**:
+Lastly, I estimate enrollment differences separately for each year, using **2016 as the reference year** because it was the last year before the Excelsior Scholarship was introduced in 2017 allowing  me to examine how enrollment differences between New York and Pennsylvania changed before and after the program's introduction.
 
 ```math
 Y_{it} = \alpha + \gamma_i + \lambda_t + \sum_{k \ne 2016} \delta_k (\text{NY}_i \times \mathbf{1}[t=k]) + \varepsilon_{it}
@@ -143,7 +143,6 @@ The event-study models reported below include institution and year fixed effects
 ### Difference-in-Differences Results
 
 After adding tuition and lagged county unemployment, my estimated treatment coefficients decreased across all four models. The coefficients remained positive, although none were statistically significant at the 5% level.
-
 
 Overall, I find a similar pattern to Howard's DiD results. Where the estimates suggest increases in enrollment, however the models still have substantial uncertainty demonstrated by.. [need to be more specific here].
 
