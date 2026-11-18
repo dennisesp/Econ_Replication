@@ -80,7 +80,16 @@ My analysis can be found in [`Excelsior_Replication_Step_by_Step.ipynb`](Excelsi
 
 I first plot average enrollment in New York and Pennsylvania between 2012 and 2019. I then test whether the two states had significantly different linear enrollment trends before treatment.
 
-src="Figures/ftft_enrollment_trends.png" alt="My FTFT enrollment trends" width="100%"></a></td>
+<td valign="top">
+  <a href="Figures/Parallel_Trends_Stats.png">
+    <img
+      src="Figures/Parallel_Trends_Stats.png"
+      alt="My parallel trends statistical results"
+      width="100%"
+    >
+  </a>
+</td>
+
 
 For the statistical test, I interact the New York indicator with a linear time trend and include institution and year fixed effects. I run the test with treatment beginning in both 2017 and 2018.
 
