@@ -4,11 +4,11 @@
 
 ## Project Overview
 
-New York introduced the Excelsior Scholarship in 2017 to help eligible residents cover tuition at public colleges and universities. In his dissertation, Howard (2026) examines whether enrollment changed following the program's introduction, using Pennsylvania as a comparison state.
+New York introduced the Excelsior Scholarship in 2017 to help eligible residents cover tuition at public colleges and universities. In his dissertation, Howard (2026) examines whether enrollment changed following the program's introduction, using Pennsylvania as a comparison state. Through his analysis Howard found that enrollment in New York went up for Pell grant eligible students following the excelsior scholarship program's introduction. 
 
-For this project, I recreate Howard's main findings for public institutions using Integrated Postsecondary Education Data System (IPEDS) and Bureau of Labor Statistics (BLS) data from 2012 through 2019. Just like the original study did, I analyzed data  on first-time, full-time undergraduate enrollment and enrollment among Pell Grant recipients across Pennsylvania and New York public institutions. 
+For this project, I recreate Howard's main findings for public institutions using the Integrated Postsecondary Education Data System (IPEDS) and Bureau of Labor Statistics (BLS) data from 2012 through 2019. Just like the original study did, I analyzed data  on first-time, full-time undergraduate enrollment and enrollment among Pell Grant recipients across Pennsylvania and New York public institutions. 
 
-I had two data limitations compared to Howard's original study. I could not obtain Penn State's disaggregated campus-level data for 2019, and I did not have the student migration data needed to recreate his in-state enrollment analysis. I therefore made some changes to the sample and focused on the main difference-in-differences (DiD) and event-study findings.
+My main data limitations compared to Howard's original study was that I could not obtain Penn State's disaggregated campus-level. This meant that the instiution count for the control state, Pennsylvania, was lower than the count in Howard's study. Still, I was able to replicate Howard's methods, and nearly match his outcomes. 
 
 ## Data
 
@@ -45,7 +45,7 @@ These are the main variables I use in the analysis notebook.
 
 ## Data Cleaning
 
-My cleaning process is in full detail in the Data cleaning Python notebook tittled "Data_cleaning.ipynb"). Where I started with separate annual IPEDS files and BLS data and merged them into one institution-year panel.
+My cleaning process is in full detail in the Data cleaning Python notebook tittled "Data_cleaning.ipynb. Where I started with separate annual IPEDS files and BLS data and merged them into one institution-year panel.
 
 1. **Merging IPEDS files.** I merged the annual Pell Grant, race and gender enrollment, and tuition files using `unitid`. I also standardized the column names across years.
 2. **Creating the panel.** I combined the annual datasets into one file and added `fall_year`.
@@ -74,7 +74,7 @@ The exclusion changes the Pennsylvania comparison group, so my results will not 
 
 ## Analysis
 
-My analysis can be found in [`Excelsior_Replication_Step_by_Step.ipynb`](Excelsior_Replication_Step_by_Step.ipynb). In this Python notebook, I  perform Howards' DiD and Event study as well as replicated some of his other figures, and compare my results to his tables 10-13. 
+My analysis can be found in [`Excelsior_Replication_Step_by_Step.ipynb`](Excelsior_Replication_Step_by_Step.ipynb). In that Python notebook, I  perform Howards' DiD and Event study as well as replicated some of his other figures, and compare my results to his tables 10-13. 
 
 ### 1. Checking Parallel Trends
 
@@ -103,7 +103,6 @@ I plotted average enrollment for both outcomes before running the DiD models. Th
 
 ### 2. Difference-in-Differences
 
-
 Next, I estimate two-way fixed-effects DiD models:
 
 $$
@@ -112,8 +111,9 @@ $$
 
 Here, $Y_{it}$ is enrollment at institution $i$ in year $t$, while $\gamma_i$ and $\lambda_t$ represent institution and year fixed effects. The coefficient $\beta$ captures the estimated change in New York enrollment relative to Pennsylvania after treatment.
 
+Following Howard's approach, I run separate models with treatment starting in **2017** and **2018**. He analyzed  both years because he wasn't sure if the 2017 cohort would've been impacted by the scholarship so soon after its announcement. 
 
-I run separate models with treatment starting in **2017** and **2018**. I start without covariates, then add logged in-state tuition and county unemployment lagged one year. I cluster standard errors at the institution level.
+
 
 ### 3. Event Study
 
@@ -134,7 +134,7 @@ The event-study models reported below include institution and year fixed effects
 After adding tuition and lagged county unemployment, my estimated treatment coefficients decreased across all four models. The coefficients remained positive, although none were statistically significant at the 5% level.
 
 
-Overall, I find a similar pattern to Howard's DiD results. The estimates suggest increases in enrollment, but the adjusted models have substantial uncertainty.
+Overall, I find a similar pattern to Howard's DiD results. Where the estimates suggest increases in enrollment, however the models still have substantial uncertainty demonstrated by.. [need to be more specific here].
 
 #### DiD Tables: My Findings and Howard's Tables 10 and 11
 
