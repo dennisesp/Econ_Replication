@@ -76,24 +76,25 @@ The exclusion changes the Pennsylvania comparison group, so my results will not 
 
 My analysis can be found in [`Excelsior_Replication_Step_by_Step.ipynb`](Excelsior_Replication_Step_by_Step.ipynb). In that Python notebook, I  perform Howards' DiD and Event study as well as replicated some of his other figures, and compare my results to his tables 10-13. 
 
+
+
+
 ### 1. Checking Parallel Trends
 
 I first plot average enrollment in New York and Pennsylvania between 2012 and 2019. I then test whether the two states had significantly different linear enrollment trends before treatment.
 
-<td valign="top">
-  <a href="Figures/Parallel_Trends_Stats.png">
-    <img
-      src="Figures/Parallel_Trends_Stats.png"
-      alt="My parallel trends statistical results"
-      width="100%"
-    >
-  </a>
-</td>
+**First-Time, Full-Time Undergraduate Enrollment**
 
+![FTFT Enrollment Trends](Figures/ftft_enrollment_trends.png)
+
+**Pell Grant Recipient Enrollment**
+
+![Pell Grant Enrollment Trends](Figures/pell_enrollment_trends.png)
 
 For the statistical test, I interact the New York indicator with a linear time trend and include institution and year fixed effects. I run the test with treatment beginning in both 2017 and 2018.
 
-None of my pretreatment slope tests were statistically significant at the 5% level. I therefore fail to reject the null hypothesis that the pretreatment slopes are equal, which provides some support for the parallel trends assumption. 
+None of my pretreatment slope tests were statistically significant at the 5% level. I therefore fail to reject the null hypothesis that the pretreatment slopes are equal, which provides some support for the parallel trends assumption.
+
 
 #### Enrollment Trends: Figure Comparisons
 
