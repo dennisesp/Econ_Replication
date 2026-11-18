@@ -93,6 +93,16 @@ I first plot average enrollment in New York and Pennsylvania between 2012 and 20
 
 For the statistical test, I interact the New York indicator with a linear time trend and include institution and year fixed effects. I run the test with treatment beginning in both 2017 and 2018.
 
+<td valign="top">
+  <a href="Figures/Parallel_Trends_Stats.png">
+    <img
+      src="Figures/Parallel_Trends_Stats.png"
+      alt="My parallel trends statistical results"
+      width="100%"
+    >
+  </a>
+</td>
+
 None of my pretreatment slope tests were statistically significant at the 5% level. I therefore fail to reject the null hypothesis that the pretreatment slopes are equal, which provides some support for the parallel trends assumption.
 
 
