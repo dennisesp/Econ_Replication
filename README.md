@@ -308,7 +308,7 @@ Before Excelsior, no group's gap from the average was already changing. Every ra
 
 ![Race × gender effects](Figures/race_gender_effects.png)
 
-Black and multiracial students gained the most compared with the average group. Black men's enrollment rose about 19–20% more than the average group in both years, and multiracial men's rose about 39% more in 2018. Black and multiracial women were also above the average, though these estimates were not significant after the correction. Across every racial group, men gained about 10% more than women (95% CI 4% to 16%, p < 0.001). Because effects are measured against the average, they add up to zero, so a negative number means a group gained less than the average group, and its own enrollment may still have grown. AIAN and NHPI estimates are imprecise because these groups average only 2 to 5 students per institution.
+Black and multiracial students gained the most compared with the average group. Black men's enrollment rose about 19–20% more than the average group in both years, and multiracial men's rose about 39% more in 2018. Black and multiracial women were also above the average, though these estimates were not significant after the correction. Across every racial group, men gained about 10% more than women (95% CI 4% to 16%, p < 0.001). Because effects are measured against the average, they add up to zero, so a negative number means a group gained less than the average group, and its own enrollment may still have grown. AIAN and NHPI estimates could be imprecise because these groups average only 2 to 5 students per institution.
 
 ### Interaction Effects
 
