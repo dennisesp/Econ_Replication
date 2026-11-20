@@ -259,8 +259,11 @@ My results are generally consistent with Howard's main event-study findings. The
 
 I compare my figures with Howard's figures for the same outcomes and treatment dates. I also keep the regression tables together above so I can compare the coefficients directly. Differences in our institutional samples are important when interpreting any differences in the estimates.
 
+#### QuantCrit/Effect Coding Extension
 
-## Extension: Race × Gender Effects (Effect Coding)
+
+The code for this section is in [`Replication/Excelsior_Race_Gender_README.ipynb`](Replication/Excelsior_Race_Gender_README.ipynb).
+
 To see who Excelsior's enrollment gains reached, I re-ran the DiD separately for 14 race × gender groups, using log FTFT enrollment, ln(1 + N), so that effects read as rough percent changes. Following Mayhew and Simonoff (2015), I used effect coding, which compares each group with the average of all groups. Standard errors are clustered by institution (Bertrand et al., 2004). Because I tested many groups at once, I used the Holm (1979) correction, a step-by-step version of Bonferroni that guards against false positives while keeping more power to detect real effects.
 
 ### Model
@@ -284,8 +287,8 @@ Before Excelsior, no group's gap from the average was already changing. Every ra
 <table>
 <tr><th width="50%">Pre-trends by racial group</th><th width="50%">Pre-trends for the gender gap</th></tr>
 <tr>
-<td valign="top"><img src="Figures/step5_race_event_study.png" width="100%"></td>
-<td valign="top"><img src="Figures/step6_gender_event_study.png" width="100%"></td>
+<td valign="top"><img src="Figures/race_pretrends_event_study.png" width="100%"></td>
+<td valign="top"><img src="Figures/gender_pretrends_event_study.png" width="100%"></td>
 </tr>
 </table>
 
@@ -321,6 +324,7 @@ The interaction test asks whether the gender gap was different for different rac
 The interaction terms let me look at the specific social locations students occupy where race and gender meet, which López et al. (2018) describe as distinct categories of experience. Breaking the data into 14 groups let me compare students within the same race, such as Black men and Black women, and across races (McCall, 2005). I could only see these patterns because I made the conscious decision to disaggregate the data, following López et al.'s call for making the invisible visible.
 
 Effect coding was a second deliberate data decision. By comparing every group with the average of all groups, the model decenters whiteness, and White students become one social location among fourteen. Overall, disaggregating the data and decentering whiteness are my two main contributions to QuantCrit in this project. At its core, QuantCrit is about the data decisions we make and how we interrogate systems of power once we uncover these discrepancies (Gillborn et al., 2018). Now that these patterns are identified, I am better equipped to dig into the specific systems at play, such as the income cap, the full-time and 30-credit requirements, where different groups enroll, and how information about the program reached different communities.
+
 ## Limitations
 
 My analysis has several limitations that are important for interpreting the findings.
@@ -329,9 +333,3 @@ My analysis has several limitations that are important for interpreting the find
 - **Student migration:** I did not recreate Howard's in-state enrollment models because I did not have the migration data needed for those specifications.
 - **Causal interpretation:** My analysis depends on the parallel trends assumption and the absence of other shocks that affected the two states differently. The pretreatment tests provide some support, but they cannot establish those assumptions.
 - **Scope:** I focused on the main public-institution findings. I did not recreate every outcome, institutional sector, or additional analysis in the dissertation.
-
-## Reference
-
-Howard, J. E. (2026). *Excelsior scholarship and college enrollment in New York: Evidence of unexpected gains* [Doctoral dissertation, University of Pennsylvania].
-
-
