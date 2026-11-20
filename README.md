@@ -261,7 +261,7 @@ I compare my figures with Howard's figures for the same outcomes and treatment d
 
 
 ## Extension: Race × Gender Effects (Effect Coding)
-To see who Excelsior's enrollment gains reached, I re-ran the DiD (Cunningham, 2021) separately for 14 race × gender groups, using log FTFT enrollment, ln(1 + N), so that effects read as rough percent changes. Following Mayhew and Simonoff (2015), I used effect coding, which compares each group with the average of all groups. Standard errors are clustered by institution (Bertrand et al., 2004). Because I tested many groups at once, I used the Holm (1979) correction, a step-by-step version of Bonferroni that guards against false positives while keeping more power to detect real effects.
+To see who Excelsior's enrollment gains reached, I re-ran the DiD separately for 14 race × gender groups, using log FTFT enrollment, ln(1 + N), so that effects read as rough percent changes. Following Mayhew and Simonoff (2015), I used effect coding, which compares each group with the average of all groups. Standard errors are clustered by institution (Bertrand et al., 2004). Because I tested many groups at once, I used the Holm (1979) correction, a step-by-step version of Bonferroni that guards against false positives while keeping more power to detect real effects.
 
 ### Model
 
