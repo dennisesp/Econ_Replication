@@ -282,7 +282,7 @@ y_{ict} = \gamma_{ic} + \lambda_{ct} + \beta D_{it} + \sum_{r} \rho_r (D_{it} \t
 
 ### Checking Parallel Trends
 
-Before Excelsior, no group's gap from the average was already changing. Every racial group passed its pre-trend test after the Holm correction, and so did the gender gap (χ²(4) = 6.00, p = 0.20). Passing these tests supports parallel trends without proving it (Roth, 2022).
+Before Excelsior, no group's gap from the average was already changing. Every racial group passed its pre-trend test after the Holm correction, and so did the gender gap (χ²(4) = 6.00, p = 0.20). Passing these tests supports parallel trends (Roth, 2022).
 
 <table>
 <tr><th width="50%">Pre-trends by racial group</th><th width="50%">Pre-trends for the gender gap</th></tr>
