@@ -261,8 +261,25 @@ I compare my figures with Howard's figures for the same outcomes and treatment d
 
 
 ## Extension: Race × Gender Effects (Effect Coding)
+To see who Excelsior's enrollment gains reached, I re-ran the DiD (Cunningham, 2021) separately for 14 race × gender groups, using log FTFT enrollment, ln(1 + N), so that effects read as rough percent changes. Following Mayhew and Simonoff (2015), I used effect coding, which compares each group with the average of all groups. Standard errors are clustered by institution (Bertrand et al., 2004). Because I tested many groups at once, I used the Holm (1979) correction, a step-by-step version of Bonferroni that guards against false positives while keeping more power to detect real effects.
 
-To examine who Excelsior's enrollment gains reached, I re-estimated the DiD on log FTFT enrollment, ln(1 + N), for each of 14 race × gender groups. Following Mayhew and Simonoff (2015) and López et al. (2018), I used effect coding, which compares each group with the unweighted average of all groups. Each group gets its own institution and year fixed effects, and standard errors are clustered by institution. Pre-trend tests passed for every racial group after a Holm correction, and for the gender gap (χ²(4) = 6.00, p = 0.20).
+### Model
+
+```math
+y_{ict} = \gamma_{ic} + \lambda_{ct} + \beta D_{it} + \sum_{r} \rho_r (D_{it} \times e_r) + \sigma (D_{it} \times e_s) + \sum_{r} \phi_r (D_{it} \times e_r \times e_s) + \varepsilon_{ict}
+```
+
+- $y_{ict}$: log FTFT enrollment for race × gender group $c$ at institution $i$ in year $t$
+- $\gamma_{ic}$, $\lambda_{ct}$: each group's own starting level at each institution and its own trend over time
+- $D_{it}$: 1 for New York institutions after Excelsior began
+- $\beta$: the average Excelsior effect across all groups
+- $\rho_r$: how far race $r$ sits above or below that average
+- $\sigma$: how far men sit above the average (women are coded −1, so the men − women gap is 2σ)
+- $\phi_r$: the race × gender interaction, or whether the gender gap in race $r$ differs from the overall gender gap
+
+### Checking Parallel Trends
+
+Before Excelsior, no group's gap from the average was already changing. Every racial group passed its pre-trend test after the Holm correction, and so did the gender gap (χ²(4) = 6.00, p = 0.20). Passing these tests supports parallel trends without proving it (Roth, 2022).
 
 <table>
 <tr><th width="50%">Pre-trends by racial group</th><th width="50%">Pre-trends for the gender gap</th></tr>
@@ -272,19 +289,9 @@ To examine who Excelsior's enrollment gains reached, I re-estimated the DiD on l
 </tr>
 </table>
 
-| Racial group | Pre-trend χ²(4) | p | p (Holm) |
-|---|---:|---:|---:|
-| AIAN | 9.941 | 0.041 | 0.290 |
-| Asian | 3.801 | 0.434 | 1.000 |
-| Black | 6.567 | 0.161 | 0.642 |
-| Hispanic | 3.112 | 0.539 | 1.000 |
-| Multiracial | 8.243 | 0.083 | 0.493 |
-| NHPI | 2.249 | 0.690 | 1.000 |
-| White | 8.271 | 0.082 | 0.493 |
+### Results
 
-Black and multiracial students gained the most relative to the average. At the race level, Black students were about 0.15 log points above the average group (Holm-adjusted p = 0.004 for 2017, 0.016 for 2018) and multiracial students about 0.30 above it (Holm-adjusted p = 0.016 for 2018). Across all racial groups, men's enrollment rose about 0.095 log points more than women's (95% CI 0.04 to 0.15, p < 0.001). When I break the results out into all 14 race × gender groups and correct for testing all of them, Black men (both years) and multiracial men (2018) remain significantly above the average. Black and multiracial women also had positive estimates above the average, but these were not significant after the correction.
-
-**Each group's Excelsior effect minus the average of all 14 groups (log points; 0.10 ≈ 10%; \* Holm-adjusted p < 0.05 across 14 groups)**
+**Each group's Excelsior effect minus the average of all 14 groups (log points; 0.10 ≈ 10%; \* Holm-adjusted p < 0.05)**
 
 | Group | Men, 2017 | Women, 2017 | Men, 2018 | Women, 2018 |
 |---|---:|---:|---:|---:|
@@ -298,19 +305,22 @@ Black and multiracial students gained the most relative to the average. At the r
 
 ![Race × gender effects](Figures/race_gender_effects.png)
 
-Because the effects are measured against the average, they sum to zero, so groups below zero gained less than the average group, though their own enrollment did not necessarily decline. AIAN and NHPI estimates are imprecise, since these groups average only about 5 and 2 FTFT students per institution. The Black estimate stayed positive but shrank and lost significance in a Poisson model on raw counts, which suggests the gain was larger at smaller institutions. The multiracial estimate held up across all robustness checks.
+Black and multiracial students gained the most compared with the average group. Black men's enrollment rose about 19–20% more than the average group in both years, and multiracial men's rose about 39% more in 2018. Black and multiracial women were also above the average, though these estimates were not significant after the correction. Across every racial group, men gained about 10% more than women (95% CI 4% to 16%, p < 0.001). Because effects are measured against the average, they add up to zero, so a negative number means a group gained less than the average group, and its own enrollment may still have grown. AIAN and NHPI estimates are imprecise because these groups average only 2 to 5 students per institution.
 
-### Interaction Effects and Contributions to QuantCrit
+### Interaction Effects
 
 | Test | 2017 | 2018 |
 |---|---:|---:|
-| Men − women gap (log points) | 0.095 (95% CI 0.044 to 0.146), p < 0.001 | 0.095 (95% CI 0.038 to 0.152), p = 0.001 |
-| Race × gender interaction terms, χ²(6) | 6.16, p = 0.406 | 3.22, p = 0.781 |
+| Men − women gap | 0.095, p < 0.001 | 0.095, p = 0.001 |
+| Does the gender gap differ by race? χ²(6) | 6.16, p = 0.41 | 3.22, p = 0.78 |
 
-The race × gender interaction terms let me look at the specific social locations students occupy at the intersection of race and gender. López et al. (2018) describe these intersections as distinct categories of experience, shaped at the same time by race, gender, and class. By estimating an effect for each of the 14 race × gender groups, I can compare students within the same racial group, such as Black men and Black women (what López et al., drawing on McCall, call intracategorical intersectionality), and across racial groups (intercategorical intersectionality). The joint test found no evidence that the gender gap differed by race. Meaning, men gained about 10% more than women in every racial group, and Black and multiracial students of both genders had estimates above the average, with Black men and multiracial men showing the clearest gains. I could only see these patterns because I made the conscious decision to disaggregate the data, which follows López et al.'s call for making the invisible visible.
+The interaction test asks whether the gender gap was different for different racial groups. The p-values are large, so I found no evidence that it was. Meaning, race and gender each shaped who gained from Excelsior, and their effects added together: Black men, for example, gained from being Black (+0.15) and from being men (+0.05).
 
-Effect coding was a second deliberate data decision. By comparing every group with the average of all groups, the model decenters whiteness, and White students become one social location among fourteen. Overall, disaggregating the data and decentering whiteness are my two main contributions to QuantCrit in this project. At its core, QuantCrit is about the data decisions we make, including which groups we count, which group we compare against, and how we interpret the gaps we find, along with how we interrogate systems of power once those discrepancies are uncovered. Following López et al. (2018), I read the larger gains for Black and multiracial students, and the smaller estimated gains for Hispanic, Asian, and NHPI students, as signals of how structural racism and the broader matrix of domination shape who a policy like Excelsior reaches. Now that these patterns are identified, I am better equipped to dig into the specific systems at play, such as the income eligibility cap, the full-time and 30-credit requirements, the institutions where different groups enroll, and how information about the program reached different communities.
+### Contributions to QuantCrit
 
+The interaction terms let me look at the specific social locations students occupy where race and gender meet, which López et al. (2018) describe as distinct categories of experience. Breaking the data into 14 groups let me compare students within the same race, such as Black men and Black women, and across races (McCall, 2005). I could only see these patterns because I made the conscious decision to disaggregate the data, following López et al.'s call for making the invisible visible.
+
+Effect coding was a second deliberate data decision. By comparing every group with the average of all groups, the model decenters whiteness, and White students become one social location among fourteen. Overall, disaggregating the data and decentering whiteness are my two main contributions to QuantCrit in this project. At its core, QuantCrit is about the data decisions we make and how we interrogate systems of power once we uncover these discrepancies (Gillborn et al., 2018). Now that these patterns are identified, I am better equipped to dig into the specific systems at play, such as the income cap, the full-time and 30-credit requirements, where different groups enroll, and how information about the program reached different communities.
 ## Limitations
 
 My analysis has several limitations that are important for interpreting the findings.
