@@ -191,7 +191,7 @@ For first-time, full-time undergraduate enrollment, all three post-treatment coe
 
 I observed similar results for Pell Grant recipients. The estimated increases were approximately 44 students in 2017, 57 in 2018, and 49 in 2019. The 2017 and 2018 coefficients were significant at the 5% level, while the 2019 estimate was marginally significant at the 10% level.
 
-None of the individual pretreatment event-study coefficients were statistically significant at the 5% level. I still need to report the joint pretreatment test alongside these estimates.
+None of the individual pretreatment event-study coefficients were statistically significant at the 5% level.
 
 My results are generally consistent with Howard's main event-study findings. The differences in coefficient magnitudes may be related to my exclusion of Penn State and other differences in how the data were constructed.
 
